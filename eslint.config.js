@@ -5,7 +5,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
   {
-    ignores: ['dist/', '.astro/', 'node_modules/'],
+    ignores: ['dist/', '.astro/', 'node_modules/', 'coverage/'],
   },
   ...eslintPluginAstro.configs['flat/recommended'],
   {
