@@ -1,5 +1,43 @@
 # TecniCopa — Guía del proyecto para Claude Code
 
+## Flujo autónomo (SIEMPRE seguir este orden)
+
+Para cualquier cambio de código:
+1. Rama `feature/<nombre>` desde `main` — NUNCA commitear directo a `main`
+2. Implementar usando los agentes especializados (ver tabla abajo)
+3. `/check` → lint + types + tests + build deben pasar
+4. `/ship` → commit (Conventional Commits) + push + PR a `main`
+5. Vercel despliega automáticamente al hacer push (preview en feature/*, producción en main)
+
+**Hotfix urgente**: `feature/` → `hotfix/` y mismo flujo.
+
+## Agentes disponibles
+
+| Tarea | Agente | Cuándo usarlo |
+|---|---|---|
+| Tests, cobertura, Vitest | `tests` | Nuevo código en `src/utils/`, tests fallando, coverage < 100% |
+| Meta tags, schema.org, sitemap | `seo` | Cambios en SEO.astro, schema.ts, nuevas páginas |
+| Componentes, Tailwind, layout | `ui-ux` | Cualquier cambio visual o de componentes |
+| Estructura de archivos, utils | `architect` | Dónde poner código nuevo, extraer lógica a utils |
+| Git, PR, deploy | `gitflow` | Al entregar cualquier cambio |
+
+## Comandos disponibles
+
+| Comando | Qué hace |
+|---|---|
+| `/feature <nombre>` | Crea rama `feature/<nombre>` desde main actualizado |
+| `/hotfix <nombre>` | Crea rama `hotfix/<nombre>` para fix urgente |
+| `/ship [descripción]` | Lint→test→build→commit→push→PR a main |
+| `/check` | Reporte completo: lint, types, tests, build |
+
+## MCP configurado
+
+- **GitHub** (`@modelcontextprotocol/server-github`): crear PRs, issues, branches, revisar CI
+  - Requiere: `GITHUB_TOKEN` en el entorno
+- **Vercel**: usar `gh` CLI + auto-deploy de Vercel (push a main = deploy automático)
+
+---
+
 ## Descripción del proyecto
 
 **TecniCopa** es el sitio web de una empresa de soporte técnico de computadores a domicilio ubicada en Copacabana, Antioquia, Colombia. Es una landing page informativa cuyo **objetivo principal es convertir visitantes en clientes que escriban por WhatsApp**.
