@@ -2,39 +2,48 @@
 
 ## Flujo autónomo (SIEMPRE seguir este orden)
 
-Para cualquier cambio de código:
-1. Rama `feature/<nombre>` desde `main` — NUNCA commitear directo a `main`
-2. Implementar usando los agentes especializados (ver tabla abajo)
-3. `/check` → lint + types + tests + build deben pasar
-4. `/ship` → commit (Conventional Commits) + push + PR a `main`
-5. Vercel despliega automáticamente al hacer push (preview en feature/*, producción en main)
+GitFlow activo — **NUNCA** commitear directo a `main` ni a `develop`.
 
-**Hotfix urgente**: `feature/` → `hotfix/` y mismo flujo.
+```
+main (producción)  ← solo releases y hotfixes
+  └── develop      ← integración, base de todos los features
+        └── feature/*  → PR a develop
+  └── hotfix/*         → PR a main Y develop
+```
+
+Para cualquier cambio:
+1. `/feature <nombre>` — crea rama desde `develop`
+2. Implementar con los agentes especializados
+3. `/check` — seguridad + lint + types + tests + build
+4. `/ship` — audit → commit → push → PR a `develop`
+5. Para ir a producción: PR de `develop` → `main` → Vercel auto-deploya
+
+**Hotfix urgente**: `/hotfix <nombre>` (parte de `main`, PR a `main` y `develop`).
 
 ## Agentes disponibles
 
 | Tarea | Agente | Cuándo usarlo |
 |---|---|---|
+| Vulnerabilidades, headers, secrets | `security` | **Siempre antes de /ship** + cualquier nueva dep o link externo |
 | Tests, cobertura, Vitest | `tests` | Nuevo código en `src/utils/`, tests fallando, coverage < 100% |
 | Meta tags, schema.org, sitemap | `seo` | Cambios en SEO.astro, schema.ts, nuevas páginas |
 | Componentes, Tailwind, layout | `ui-ux` | Cualquier cambio visual o de componentes |
 | Estructura de archivos, utils | `architect` | Dónde poner código nuevo, extraer lógica a utils |
-| Git, PR, deploy | `gitflow` | Al entregar cualquier cambio |
+| Git, ramas, PR, deploy | `gitflow` | Al entregar cualquier cambio |
 
 ## Comandos disponibles
 
 | Comando | Qué hace |
 |---|---|
-| `/feature <nombre>` | Crea rama `feature/<nombre>` desde main actualizado |
-| `/hotfix <nombre>` | Crea rama `hotfix/<nombre>` para fix urgente |
-| `/ship [descripción]` | Lint→test→build→commit→push→PR a main |
-| `/check` | Reporte completo: lint, types, tests, build |
+| `/feature <nombre>` | Crea `feature/<nombre>` desde `develop` |
+| `/hotfix <nombre>` | Crea `hotfix/<nombre>` desde `main` |
+| `/ship` | audit→lint→test→build→commit→push→PR |
+| `/check` | Reporte completo: seguridad + calidad |
 
 ## MCP configurado
 
-- **GitHub** (`@modelcontextprotocol/server-github`): crear PRs, issues, branches, revisar CI
-  - Requiere: `GITHUB_TOKEN` en el entorno
-- **Vercel**: usar `gh` CLI + auto-deploy de Vercel (push a main = deploy automático)
+- **GitHub** (`@modelcontextprotocol/server-github`): PRs, branches, CI — requiere `GITHUB_TOKEN`
+- **Vercel**: auto-deploy vía GitHub (push `main` = producción, push `feature/*` = preview)
 
 ---
 

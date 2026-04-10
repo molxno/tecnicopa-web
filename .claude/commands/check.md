@@ -1,18 +1,33 @@
-Ejecuta una verificación completa de calidad del proyecto y reporta el estado.
+Ejecuta verificación completa de calidad Y seguridad. Reporta estado de cada ítem.
 
-Corre estos comandos en orden y muestra un resumen al final:
+Corre en orden:
 
-1. `npm run lint` — ESLint sobre todo el proyecto
-2. `npm run check` — Verificación de tipos Astro + TypeScript  
-3. `npm run test:coverage` — Tests con reporte de cobertura
-4. `npm run build` — Build de producción completo
+1. `npm audit --audit-level=high` — vulnerabilidades HIGH/CRITICAL en deps
+2. `npm run lint` — ESLint
+3. `npm run check` — tipos Astro + TypeScript
+4. `npm run test:coverage` — tests con cobertura
+5. `npm run build` — build de producción
+
+Checks de seguridad adicionales:
+6. `grep -rn "target=\"_blank\"" src/ --include="*.astro" -A1 | grep -v "noopener"` — links sin noopener (resultado vacío = OK)
+7. `grep -rn "set:html" src/` — verificar que solo se usa con datos estáticos
+8. `grep -rn "import\.meta\.env\|VITE_" src/` — vars de entorno expuestas
+9. `cat vercel.json` — confirmar que los headers de seguridad están presentes
 
 Formato del reporte final:
 ```
-✅ Lint      — 0 errores
-✅ Types     — sin errores TypeScript
-✅ Tests     — 45/45 passing | Coverage 100%
-✅ Build     — 1 página generada
+CALIDAD:
+✅ Audit      — 0 HIGH/CRITICAL (N moderate en devDeps, no afectan producción)
+✅ Lint        — 0 errores
+✅ Types       — sin errores TypeScript/Astro
+✅ Tests       — 45/45 passing | Coverage 100%
+✅ Build       — 1 página generada
+
+SEGURIDAD:
+✅ Links       — todos con noopener noreferrer
+✅ set:html    — solo con datos estáticos (src/utils/)
+✅ Env vars    — ninguna expuesta en bundle
+✅ Headers     — vercel.json con CSP, X-Frame-Options, etc.
 ```
 
-Si alguno falla, mostrar el error exacto y proponer la corrección.
+Si algo falla, mostrar el error exacto y qué hay que corregir antes de poder hacer /ship.

@@ -1,30 +1,75 @@
-Entrega el trabajo actual: verifica calidad, hace commit, push y crea PR a main.
+Entrega el trabajo actual: seguridad → calidad → commit → push → PR.
 
-Contexto opcional: $ARGUMENTS (se usa como descripción del PR si se pasa)
+Contexto opcional: $ARGUMENTS
 
-Ejecuta estos pasos en orden, deteniéndote si alguno falla:
+Ejecuta en orden, deteniéndote en cualquier fallo:
 
-1. **Verificar rama**: `git branch --show-current` — si es `main`, PARAR y avisar al usuario que debe estar en una rama feature/* o hotfix/*
+1. **Verificar rama**
+   ```bash
+   git branch --show-current
+   ```
+   - Si es `main` o `develop` → PARAR. Pedir al usuario que cree una rama con `/feature` o `/hotfix`.
+   - Anotar si es `feature/*` (PR va a `develop`) o `hotfix/*` (PR va a `main`).
 
-2. **Lint**: `npm run lint` — si falla, corregir los errores antes de continuar
+2. **Seguridad** (agente `security`)
+   ```bash
+   npm audit --audit-level=high
+   ```
+   Si hay HIGH o CRITICAL → PARAR. No hay entrega con vulnerabilidades HIGH/CRITICAL.
 
-3. **Tests**: `npm run test` — si falla, corregir antes de continuar
+3. **Lint**
+   ```bash
+   npm run lint
+   ```
+   Si falla → corregir antes de continuar.
 
-4. **Build**: `npm run build` — si falla, corregir antes de continuar
+4. **Tests**
+   ```bash
+   npm run test
+   ```
+   Si falla → corregir antes de continuar.
 
-5. **Ver cambios**: `git diff --stat` y `git status` para entender qué se entrega
+5. **Build**
+   ```bash
+   npm run build
+   ```
+   Si falla → corregir antes de continuar.
 
-6. **Staging inteligente**: añadir solo los archivos relacionados al cambio (no `git add .` a ciegas si hay archivos no relacionados)
+6. **Revisar cambios**
+   ```bash
+   git diff --stat && git status
+   ```
+   Entender exactamente qué se entrega.
 
-7. **Commit**: Crear mensaje en formato Conventional Commits que describa los cambios reales. Usar `git commit -m "..."` con el formato correcto.
+7. **Staging selectivo** — añadir solo archivos del cambio actual (nunca `git add .` si hay archivos sin relación).
 
-8. **Push**: `git push -u origin <rama-actual>`
+8. **Commit** con Conventional Commits. El hook de commitlint rechazará mensajes inválidos.
 
-9. **PR**: Crear PR con `gh pr create` con:
-   - Título en Conventional Commits
-   - Body con resumen de cambios, qué se probó y enlace a preview de Vercel (Vercel lo genera automáticamente)
-   - Base: `main`
+9. **Push**
+   ```bash
+   git push -u origin <rama-actual>
+   ```
 
-10. Mostrar al usuario la URL del PR creado.
+10. **PR** — determinar base según tipo de rama:
+    - `feature/*` → `--base develop`
+    - `hotfix/*` → `--base main` (y crear un segundo PR a `develop` si aplica)
+    - `release/*` → `--base main`
 
-Si algún paso falla, reportar el error exacto y qué hay que corregir.
+    ```bash
+    gh pr create \
+      --title "tipo(scope): descripción" \
+      --body "## Qué cambia
+    - ...
+
+    ## Seguridad
+    - npm audit --audit-level=high: 0 HIGH/CRITICAL ✅
+    - Links externos con noopener: ✅
+    - set:html solo con datos estáticos: ✅
+
+    ## Testing
+    - npm test: X/X ✅
+    - npm run build: OK ✅" \
+      --base <develop|main>
+    ```
+
+11. Mostrar URL del PR al usuario.
