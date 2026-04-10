@@ -1,13 +1,9 @@
 ---
-const currentYear = new Date().getFullYear();
+import { getCurrentYear } from '../utils/date';
+import { NAV_LINKS } from '../utils/content';
 
-const navLinks = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#por-que', label: '¿Por qué nosotros?' },
-  { href: '#precios', label: 'Precios' },
-  { href: '#nosotros', label: 'Nosotros' },
-  { href: '#contacto', label: 'Contacto' },
-];
+const currentYear = getCurrentYear();
+const navLinks = NAV_LINKS;
 ---
 
 <footer class="bg-tecni-dark border-t border-white/10 py-10">

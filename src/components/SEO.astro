@@ -1,4 +1,6 @@
 ---
+import { resolveOgImageUrl, DEFAULT_OG_IMAGE, DEFAULT_ROBOTS } from '../utils/seo';
+
 interface Props {
   title: string;
   description: string;
@@ -11,12 +13,11 @@ const {
   title,
   description,
   canonicalURL = Astro.url,
-  ogImage = '/logo.png',
-  robots = 'index, follow',
+  ogImage = DEFAULT_OG_IMAGE,
+  robots = DEFAULT_ROBOTS,
 } = Astro.props;
 
-const siteURL = 'https://tecnicopa.com';
-const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteURL}${ogImage}`;
+const ogImageAbsolute = resolveOgImageUrl(ogImage);
 ---
 
 <!-- SEO primario -->

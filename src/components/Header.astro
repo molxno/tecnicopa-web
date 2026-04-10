@@ -1,14 +1,9 @@
 ---
-const whatsappLink =
-  "https://wa.me/573243638746?text=Hola%2C%20quiero%20agendar%20un%20servicio";
+import { WHATSAPP_URL } from '../utils/links';
+import { NAV_LINKS } from '../utils/content';
 
-const navLinks = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#por-que", label: "¿Por qué nosotros?" },
-  { href: "#precios", label: "Precios" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
-];
+const whatsappLink = WHATSAPP_URL;
+const navLinks = NAV_LINKS;
 ---
 
 <header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-tecni-lilac/30 z-50">
