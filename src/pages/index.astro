@@ -11,12 +11,14 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from "@vercel/speed-insights/astro"
 ---
 
 <Layout
   title="TecniCopa | Soporte Técnico a Domicilio en Copacabana, Antioquia"
   description="Soporte técnico de computadores a domicilio en Copacabana. Diagnóstico gratis, garantía escrita y factura electrónica. Mantenimiento, formateo, antivirus y más."
 >
+  <SpeedInsights/>
   <Analytics/>
   <Header />
   <main>
