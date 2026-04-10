@@ -1,0 +1,89 @@
+---
+const whatsappLink =
+  "https://wa.me/573243638746?text=Hola%2C%20quiero%20agendar%20un%20servicio";
+
+const navLinks = [
+  { href: "#servicios", label: "Servicios" },
+  { href: "#por-que", label: "¿Por qué nosotros?" },
+  { href: "#precios", label: "Precios" },
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-tecni-lilac/30 z-50">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/logo.png" alt="TecniCopa" class="h-10 w-10 rounded-lg" />
+      <span class="text-xl font-bold text-tecni-purple">TecniCopa</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-6">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm text-tecni-dark/70 hover:text-tecni-purple transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium bg-tecni-purple text-white px-4 py-2 rounded-lg hover:bg-tecni-purple/90 transition-colors"
+        >
+          Escríbenos
+        </a>
+      </li>
+    </ul>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden p-2 text-tecni-dark"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-tecni-lilac/30 bg-white"
+  >
+    <ul class="flex flex-col px-4 py-4 gap-3">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block text-tecni-dark/70 hover:text-tecni-purple transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-center font-medium bg-tecni-purple text-white px-4 py-2 rounded-lg"
+        >
+          Escríbenos
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => menu?.classList.add("hidden"));
+  });
+</script>

@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-tecni-purple: #534AB7;
+  --color-tecni-dark: #2C2C2A;
+  --color-tecni-lavender: #EEEDFE;
+  --color-tecni-lilac: #CECBF6;
+}

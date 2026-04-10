@@ -1,0 +1,61 @@
+---
+const whatsappLink =
+  "https://wa.me/573243638746?text=Hola%2C%20quiero%20agendar%20un%20servicio";
+---
+
+<section class="min-h-screen flex items-center bg-gradient-to-b from-tecni-lavender to-white pt-16">
+  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+
+    <div class="flex flex-col gap-6">
+      <div class="inline-flex items-center gap-2 bg-tecni-purple/10 text-tecni-purple text-sm font-medium px-3 py-1 rounded-full w-fit">
+        <span class="w-2 h-2 bg-tecni-purple rounded-full animate-pulse"></span>
+        Servicio a domicilio en Copacabana
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-tecni-dark leading-tight">
+        ¿Tu PC anda lento?
+        <span class="text-tecni-purple"> Lo arreglamos.</span>
+      </h1>
+
+      <p class="text-lg text-tecni-dark/70 max-w-lg">
+        Soporte técnico profesional con garantía escrita y factura electrónica.
+        Diagnóstico gratis — escríbenos y te ayudamos hoy.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-tecni-purple text-white font-medium px-6 py-3 rounded-xl hover:bg-tecni-purple/90 transition-colors text-lg"
+        >
+          Agendar servicio
+        </a>
+        <a
+          href="#servicios"
+          class="inline-flex items-center justify-center gap-2 border-2 border-tecni-lilac text-tecni-purple font-medium px-6 py-3 rounded-xl hover:bg-tecni-lavender transition-colors text-lg"
+        >
+          Ver servicios
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-4 pt-2 text-sm text-tecni-dark/50">
+        <span>✔ Garantía escrita</span>
+        <span>✔ Factura electrónica</span>
+        <span>✔ Diagnóstico gratis</span>
+      </div>
+    </div>
+
+    <div class="hidden md:flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-tecni-purple/20 rounded-3xl blur-3xl"></div>
+        <img
+          src="/logo.png"
+          alt="TecniCopa - Soporte Integral"
+          class="relative w-80 h-80 rounded-3xl shadow-2xl"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
