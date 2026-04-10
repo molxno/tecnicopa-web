@@ -1,0 +1,58 @@
+---
+const testimonials = [
+  {
+    name: 'María T.',
+    location: 'Copacabana',
+    text: 'Me arreglaron el computador en casa el mismo día. Vinieron a tiempo, explicaron todo con claridad y me dieron garantía por escrito. Muy profesionales.',
+    service: 'Mantenimiento',
+  },
+  {
+    name: 'Carlos R.',
+    location: 'Copacabana',
+    text: 'Tenía el equipo lleno de virus y casi no prendía. Lo formatearon, instalaron Windows y quedó como nuevo. Además emiten factura, eso me da mucha confianza.',
+    service: 'Formateo + antivirus',
+  },
+  {
+    name: 'Luisa M.',
+    location: 'Girardota',
+    text: 'Excelente servicio. Me atendieron por soporte remoto en menos de una hora y resolvieron el problema sin necesidad de llevar el equipo. Lo recomiendo.',
+    service: 'Soporte remoto',
+  },
+];
+---
+
+<section id="testimonios" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Lo que dicen nuestros clientes</h2>
+      <p class="text-tecni-dark/60 max-w-xl mx-auto">
+        La confianza se gana con resultados. Esto es lo que nos dicen quienes ya probaron el servicio.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        testimonials.map((t) => (
+          <figure class="flex flex-col gap-4 p-6 rounded-2xl bg-tecni-lavender">
+            <blockquote>
+              <p class="text-tecni-dark/70 leading-relaxed text-sm">"{t.text}"</p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3 mt-auto">
+              <div class="w-10 h-10 rounded-full bg-tecni-purple flex items-center justify-center shrink-0">
+                <span class="text-white font-bold text-sm" aria-hidden="true">
+                  {t.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <p class="font-medium text-tecni-dark text-sm">{t.name}</p>
+                <p class="text-xs text-tecni-dark/50">
+                  {t.location} · {t.service}
+                </p>
+              </div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

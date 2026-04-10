@@ -1,15 +1,47 @@
 ---
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
 
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { 
-  title = "Tecnicopa",
-  description = "Reparación, mantenimiento y ensamble de computadores a domicilio en Copacabana, Antioquia. Diagnóstico gratis." 
+const {
+  title,
+  description = 'Soporte técnico de computadores a domicilio en Copacabana, Antioquia. Diagnóstico gratis, garantía escrita y factura electrónica.',
+  ogImage,
 } = Astro.props;
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'TecniCopa',
+  description: 'Soporte técnico de computadores a domicilio en Copacabana, Antioquia',
+  url: 'https://tecnicopa.com',
+  telephone: '+573243638746',
+  email: 'contacto@tecnicopa.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Copacabana',
+    addressRegion: 'Antioquia',
+    addressCountry: 'CO',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Copacabana' },
+    { '@type': 'City', name: 'Girardota' },
+    { '@type': 'City', name: 'Bello' },
+  ],
+  priceRange: '$',
+  serviceType: 'Computer Repair',
+  image: 'https://tecnicopa.com/logo.png',
+  sameAs: ['https://instagram.com/tecnicopa'],
+  founder: {
+    '@type': 'Person',
+    name: 'Santiago Molano',
+  },
+};
 ---
 
 <!doctype html>
@@ -17,11 +49,26 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+
     <title>{title}</title>
+
+    <SEO title={title} description={description} ogImage={ogImage} />
+
+    <!-- Favicon -->
+    <!-- Reemplazar con favicon de marca definitivo: public/favicon.ico y public/favicon.svg -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
   </head>
   <body class="bg-white text-tecni-dark font-sans">
     <slot />

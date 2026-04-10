@@ -1,0 +1,64 @@
+---
+const services = [
+  {
+    title: 'Mantenimiento preventivo y correctivo',
+    description:
+      'Limpieza interna, cambio de pasta térmica y revisión completa para que tu equipo dure muchos años más.',
+    icon: '🔧',
+  },
+  {
+    title: 'Formateo e instalación de sistema operativo',
+    description:
+      'Instalamos Windows o Linux desde cero, con todos los drivers y programas esenciales listos para usar.',
+    icon: '💿',
+  },
+  {
+    title: 'Eliminación de virus y malware',
+    description:
+      '¿Tu equipo está lento o se comporta raro? Lo analizamos, eliminamos amenazas y lo dejamos seguro.',
+    icon: '🛡️',
+  },
+  {
+    title: 'Soporte remoto',
+    description:
+      'Resolvemos problemas de software sin necesidad de desplazamiento — rápido, seguro y desde la comodidad de tu casa.',
+    icon: '🖥️',
+  },
+];
+---
+
+<section id="servicios" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Nuestros servicios</h2>
+      <p class="text-tecni-dark/60 max-w-xl mx-auto">
+        Soluciones técnicas reales para los problemas más comunes. Sin tecnicismos, sin sorpresas.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        services.map((service) => (
+          <article class="flex flex-col gap-3 p-6 rounded-2xl border border-tecni-lilac/40 hover:border-tecni-purple/40 hover:shadow-md transition-all">
+            <span class="text-3xl" aria-hidden="true">
+              {service.icon}
+            </span>
+            <h3 class="font-bold text-tecni-dark">{service.title}</h3>
+            <p class="text-sm text-tecni-dark/60 leading-relaxed">{service.description}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center">
+      <a
+        href="https://wa.me/573243638746?text=Hola%2C%20quiero%20agendar%20un%20servicio"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-tecni-purple text-white font-medium px-6 py-3 rounded-xl hover:bg-tecni-purple/90 transition-colors"
+      >
+        Agendar servicio
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+const plans = [
+  {
+    name: 'Diagnóstico',
+    price: 'Gratis',
+    description: 'Evaluamos tu equipo y te decimos exactamente qué tiene y cuánto costará arreglarlo.',
+    features: ['Revisión de hardware y software', 'Informe verbal del diagnóstico', 'Sin compromiso de reparación'],
+    cta: 'Solicitar diagnóstico',
+    highlighted: false,
+  },
+  {
+    name: 'Mantenimiento',
+    price: 'Desde $60.000',
+    description: 'Limpieza completa, pasta térmica nueva y optimización para que tu equipo vuele de nuevo.',
+    features: ['Limpieza interna profunda', 'Cambio de pasta térmica', 'Optimización del sistema', 'Garantía escrita', 'Factura electrónica'],
+    cta: 'Agendar mantenimiento',
+    highlighted: true,
+  },
+  {
+    name: 'Formateo',
+    price: 'Desde $80.000',
+    description: 'Instalación limpia de Windows o Linux con drivers y programas básicos incluidos.',
+    features: ['Instalación de sistema operativo', 'Drivers completos', 'Programas esenciales', 'Garantía escrita', 'Factura electrónica'],
+    cta: 'Agendar formateo',
+    highlighted: false,
+  },
+];
+---
+
+<section id="precios" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Precios</h2>
+      <p class="text-tecni-dark/60 max-w-xl mx-auto">
+        Precios justos y transparentes. Sin cobros ocultos — lo que cotizamos es lo que pagas.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        plans.map((plan) => (
+          <div
+            class={`flex flex-col gap-5 p-6 rounded-2xl border-2 transition-all ${
+              plan.highlighted
+                ? 'border-tecni-purple bg-tecni-purple text-white shadow-lg shadow-tecni-purple/20'
+                : 'border-tecni-lilac/40 bg-white'
+            }`}
+          >
+            <div>
+              <p
+                class={`text-sm font-medium mb-1 ${plan.highlighted ? 'text-white/70' : 'text-tecni-dark/50'}`}
+              >
+                {plan.name}
+              </p>
+              <p class={`text-3xl font-bold ${plan.highlighted ? 'text-white' : 'text-tecni-dark'}`}>
+                {plan.price}
+              </p>
+              <p
+                class={`text-sm mt-2 leading-relaxed ${plan.highlighted ? 'text-white/80' : 'text-tecni-dark/60'}`}
+              >
+                {plan.description}
+              </p>
+            </div>
+
+            <ul class="flex flex-col gap-2 flex-1">
+              {plan.features.map((feature) => (
+                <li
+                  class={`flex items-center gap-2 text-sm ${plan.highlighted ? 'text-white/90' : 'text-tecni-dark/70'}`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class={`w-4 h-4 shrink-0 ${plan.highlighted ? 'text-white' : 'text-tecni-purple'}`}
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://wa.me/573243638746?text=Hola%2C%20quiero%20agendar%20un%20servicio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`text-center font-medium px-5 py-3 rounded-xl transition-colors ${
+                plan.highlighted
+                  ? 'bg-white text-tecni-purple hover:bg-tecni-lavender'
+                  : 'bg-tecni-purple text-white hover:bg-tecni-purple/90'
+              }`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 text-center text-sm text-tecni-dark/50">
+      ¿Tienes un caso diferente? Escríbenos y lo cotizamos sin compromiso.
+    </p>
+  </div>
+</section>

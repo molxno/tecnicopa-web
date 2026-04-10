@@ -1,0 +1,66 @@
+---
+const reasons = [
+  {
+    title: 'Garantía escrita',
+    description:
+      'Todos nuestros servicios incluyen garantía por escrito. Si el problema vuelve en el plazo acordado, lo resolvemos sin costo.',
+  },
+  {
+    title: 'Factura electrónica',
+    description:
+      'Emitimos factura electrónica por cada servicio. Trabajamos formal, con transparencia y respaldo legal.',
+  },
+  {
+    title: 'Seguimiento post-servicio',
+    description:
+      'A los 7 días te contactamos para asegurarnos de que todo sigue funcionando bien. Tu tranquilidad importa.',
+  },
+  {
+    title: 'Servicio a domicilio',
+    description:
+      'Vamos donde estés en Copacabana y municipios cercanos. Sin filas, sin desplazamientos innecesarios.',
+  },
+];
+---
+
+<section id="por-que" class="py-20 bg-tecni-lavender">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">
+        ¿Por qué elegir TecniCopa?
+      </h2>
+      <p class="text-tecni-dark/60 max-w-xl mx-auto">
+        No somos el vecino que "sabe de computadores". Somos un servicio técnico profesional con
+        identidad, respaldo y compromiso.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {
+        reasons.map((reason) => (
+          <div class="flex gap-4 p-6 bg-white rounded-2xl shadow-sm">
+            <div class="mt-1 w-5 h-5 shrink-0 rounded-full bg-tecni-purple flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-3 h-3 text-white"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-tecni-dark mb-1">{reason.title}</h3>
+              <p class="text-sm text-tecni-dark/60 leading-relaxed">{reason.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
