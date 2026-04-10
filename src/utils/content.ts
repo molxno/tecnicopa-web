@@ -42,25 +42,25 @@ export const services: Service[] = [
   {
     title: 'Mantenimiento preventivo y correctivo',
     description:
-      'Limpieza interna, cambio de pasta térmica y revisión completa para que tu equipo dure muchos años más.',
+      'Limpieza interna profunda, cambio de pasta térmica y revisión completa del hardware. Tu equipo corre más rápido y dura más años.',
     icon: '🔧',
   },
   {
     title: 'Formateo e instalación de sistema operativo',
     description:
-      'Instalamos Windows o Linux desde cero, con todos los drivers y programas esenciales listos para usar.',
+      'Instalamos Windows, Linux o macOS desde cero con todos los drivers, actualizaciones y programas esenciales ya listos.',
     icon: '💿',
   },
   {
     title: 'Eliminación de virus y malware',
     description:
-      '¿Tu equipo está lento o se comporta raro? Lo analizamos, eliminamos amenazas y lo dejamos seguro.',
+      '¿Tu PC está lento, muestra ventanas raras o se apaga solo? Lo analizamos, eliminamos las amenazas y lo dejamos seguro.',
     icon: '🛡️',
   },
   {
     title: 'Soporte remoto',
     description:
-      'Resolvemos problemas de software sin necesidad de desplazamiento — rápido, seguro y desde la comodidad de tu casa.',
+      'Resolvemos problemas de software sin movernos de donde estás. Rápido, seguro y sin desplazamientos.',
     icon: '🖥️',
   },
 ];
@@ -70,40 +70,42 @@ export const plans: Plan[] = [
     name: 'Diagnóstico',
     price: 'Gratis',
     description:
-      'Evaluamos tu equipo y te decimos exactamente qué tiene y cuánto costará arreglarlo.',
+      'Revisamos tu equipo, identificamos el problema y te decimos exactamente qué tiene y cuánto cuesta arreglarlo.',
     features: [
-      'Revisión de hardware y software',
-      'Informe verbal del diagnóstico',
+      'Revisión completa de hardware y software',
+      'Informe claro y sin tecnicismos',
       'Sin compromiso de reparación',
+      'Atención a domicilio en Copacabana',
     ],
-    cta: 'Solicitar diagnóstico',
+    cta: 'Solicitar diagnóstico gratis',
     highlighted: false,
   },
   {
     name: 'Mantenimiento',
-    price: 'Desde $60.000',
+    price: 'Desde $30.000',
     description:
-      'Limpieza completa, pasta térmica nueva y optimización para que tu equipo vuele de nuevo.',
+      'Limpieza completa, pasta térmica nueva y optimización del sistema. El servicio más pedido por nuestros clientes.',
     features: [
       'Limpieza interna profunda',
       'Cambio de pasta térmica',
-      'Optimización del sistema',
-      'Garantía escrita',
+      'Optimización del sistema operativo',
+      'Garantía escrita incluida',
       'Factura electrónica',
+      'Seguimiento a los 7 días',
     ],
     cta: 'Agendar mantenimiento',
     highlighted: true,
   },
   {
-    name: 'Formateo',
-    price: 'Desde $80.000',
+    name: 'Formateo completo',
+    price: 'Desde $40.000',
     description:
-      'Instalación limpia de Windows o Linux con drivers y programas básicos incluidos.',
+      'Instalación limpia del sistema operativo con drivers, actualizaciones y programas esenciales. Como nuevo.',
     features: [
-      'Instalación de sistema operativo',
-      'Drivers completos',
-      'Programas esenciales',
-      'Garantía escrita',
+      'Windows, Linux o macOS',
+      'Drivers e instalación completa',
+      'Programas esenciales incluidos',
+      'Garantía escrita incluida',
       'Factura electrónica',
     ],
     cta: 'Agendar formateo',
@@ -113,24 +115,24 @@ export const plans: Plan[] = [
 
 export const reasons: Reason[] = [
   {
-    title: 'Garantía escrita',
+    title: 'Garantía escrita en cada servicio',
     description:
-      'Todos nuestros servicios incluyen garantía por escrito. Si el problema vuelve en el plazo acordado, lo resolvemos sin costo.',
+      'Si el problema vuelve dentro del plazo acordado, lo resolvemos sin costo adicional. Cero letra pequeña.',
   },
   {
-    title: 'Factura electrónica',
+    title: 'Factura electrónica siempre',
     description:
-      'Emitimos factura electrónica por cada servicio. Trabajamos formal, con transparencia y respaldo legal.',
+      'Operamos de forma 100% formal. Cada servicio tiene su factura electrónica ante la DIAN. Transparencia total.',
   },
   {
-    title: 'Seguimiento post-servicio',
+    title: 'Seguimiento a los 7 días',
     description:
-      'A los 7 días te contactamos para asegurarnos de que todo sigue funcionando bien. Tu tranquilidad importa.',
+      'Después de cada servicio te contactamos para asegurarnos de que todo sigue funcionando. No desaparecemos una vez cobrado.',
   },
   {
-    title: 'Servicio a domicilio',
+    title: 'Somos de acá, conocemos el municipio',
     description:
-      'Vamos donde estés en Copacabana y municipios cercanos. Sin filas, sin desplazamientos innecesarios.',
+      'Vivimos y trabajamos en Copacabana. Llegamos rápido, sin cobros extra de desplazamiento desde Medellín.',
   },
 ];
 
@@ -138,19 +140,19 @@ export const testimonials: Testimonial[] = [
   {
     name: 'María T.',
     location: 'Copacabana',
-    text: 'Me arreglaron el computador en casa el mismo día. Vinieron a tiempo, explicaron todo con claridad y me dieron garantía por escrito. Muy profesionales.',
-    service: 'Mantenimiento',
+    text: 'Mi computador tardaba 15 minutos en encender. Lo revisaron en casa, hicieron la limpieza y quedó como nuevo. Me dieron la garantía por escrito y todo. 10 de 10.',
+    service: 'Mantenimiento preventivo',
   },
   {
     name: 'Carlos R.',
     location: 'Copacabana',
-    text: 'Tenía el equipo lleno de virus y casi no prendía. Lo formatearon, instalaron Windows y quedó como nuevo. Además emiten factura, eso me da mucha confianza.',
-    service: 'Formateo + antivirus',
+    text: 'Tenía el equipo lleno de virus y casi no funcionaba. Lo formatearon, instalaron Windows y dejaron todo listo con mis programas. Encima emiten factura electrónica, eso me genera mucha confianza.',
+    service: 'Formateo + eliminación de virus',
   },
   {
     name: 'Luisa M.',
     location: 'Girardota',
-    text: 'Excelente servicio. Me atendieron por soporte remoto en menos de una hora y resolvieron el problema sin necesidad de llevar el equipo. Lo recomiendo.',
+    text: 'Necesitaba soporte urgente para una presentación y me atendieron por remoto en menos de una hora. Resolvieron el problema sin que yo tuviera que llevar el equipo a ningún lado. Excelente.',
     service: 'Soporte remoto',
   },
 ];
