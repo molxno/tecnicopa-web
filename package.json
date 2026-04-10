@@ -40,5 +40,9 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3",
     "vitest": "^4.1.4"
+  },
+  "overrides": {
+    "path-to-regexp": "^6.3.0",
+    "yaml": "^2.8.3"
   }
 }
