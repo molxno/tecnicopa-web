@@ -67,8 +67,8 @@ export const services: Service[] = [
 
 export const plans: Plan[] = [
   {
-    name: 'Diagnóstico',
-    price: 'Gratis',
+    name: 'Diagnóstico a domicilio',
+    price: 'Desde $80.000',
     description:
       'Revisamos tu equipo, identificamos el problema y te decimos exactamente qué tiene y cuánto cuesta arreglarlo.',
     features: [
@@ -77,12 +77,12 @@ export const plans: Plan[] = [
       'Sin compromiso de reparación',
       'Atención a domicilio en Copacabana',
     ],
-    cta: 'Solicitar diagnóstico gratis',
+    cta: 'Solicitar diagnóstico',
     highlighted: false,
   },
   {
     name: 'Mantenimiento',
-    price: 'Desde $30.000',
+    price: 'Desde $100.000',
     description:
       'Limpieza completa, pasta térmica nueva y optimización del sistema. El servicio más pedido por nuestros clientes.',
     features: [
@@ -90,7 +90,7 @@ export const plans: Plan[] = [
       'Cambio de pasta térmica',
       'Optimización del sistema operativo',
       'Garantía escrita incluida',
-      'Factura electrónica',
+      'Comprobante de pago',
       'Seguimiento a los 7 días',
     ],
     cta: 'Agendar mantenimiento',
@@ -98,7 +98,7 @@ export const plans: Plan[] = [
   },
   {
     name: 'Formateo completo',
-    price: 'Desde $40.000',
+    price: 'Desde $100.000',
     description:
       'Instalación limpia del sistema operativo con drivers, actualizaciones y programas esenciales. Como nuevo.',
     features: [
@@ -106,7 +106,7 @@ export const plans: Plan[] = [
       'Drivers e instalación completa',
       'Programas esenciales incluidos',
       'Garantía escrita incluida',
-      'Factura electrónica',
+      'Comprobante de pago',
     ],
     cta: 'Agendar formateo',
     highlighted: false,
@@ -120,9 +120,9 @@ export const reasons: Reason[] = [
       'Si el problema vuelve dentro del plazo acordado, lo resolvemos sin costo adicional. Cero letra pequeña.',
   },
   {
-    title: 'Factura electrónica siempre',
+    title: 'Comprobante de pago en cada servicio',
     description:
-      'Operamos de forma 100% formal. Cada servicio tiene su factura electrónica ante la DIAN. Transparencia total.',
+      'Te entregamos comprobante de todo lo que pagas. Sabes exactamente por qué servicio pagaste y cuánto. Transparencia total.',
   },
   {
     title: 'Seguimiento a los 7 días',
@@ -146,7 +146,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Carlos R.',
     location: 'Copacabana',
-    text: 'Tenía el equipo lleno de virus y casi no funcionaba. Lo formatearon, instalaron Windows y dejaron todo listo con mis programas. Encima emiten factura electrónica, eso me genera mucha confianza.',
+    text: 'Tenía el equipo lleno de virus y casi no funcionaba. Lo formatearon, instalaron Windows y dejaron todo listo con mis programas. Encima me dieron comprobante de todo, eso me genera mucha confianza.',
     service: 'Formateo + eliminación de virus',
   },
   {

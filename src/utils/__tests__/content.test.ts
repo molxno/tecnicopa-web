@@ -58,8 +58,9 @@ describe('plans', () => {
     }
   });
 
-  it('first plan is the free Diagnóstico', () => {
-    expect(plans[0].price).toBe('Gratis');
+  it('first plan is the Diagnóstico a domicilio', () => {
+    expect(plans[0].name).toBe('Diagnóstico a domicilio');
+    expect(plans[0].price).toBe('Desde $80.000');
     expect(plans[0].highlighted).toBe(false);
   });
 
