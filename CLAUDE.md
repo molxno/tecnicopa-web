@@ -42,8 +42,12 @@ Para cualquier cambio:
 
 ## MCP configurado
 
-- **GitHub** (`@modelcontextprotocol/server-github`): PRs, branches, CI — requiere `GITHUB_TOKEN`
-- **Vercel**: auto-deploy vía GitHub (push `main` = producción, push `feature/*` = preview)
+Definidos en `.mcp.json` (raíz del proyecto). Tras clonar y abrir el proyecto en Claude Code, autentícalos con OAuth desde el comando `/mcp` (no requieren tokens manuales).
+
+- **GitHub** (servidor remoto oficial, `https://api.githubcopilot.com/mcp/`): PRs, branches, issues, CI. Login OAuth al conectar.
+- **Vercel** (servidor remoto oficial, `https://mcp.vercel.com`): proyectos, deploys y logs. Login OAuth al conectar.
+
+El auto-deploy se mantiene vía GitHub → Vercel (push `main` = producción, push `feature/*` = preview).
 
 ---
 
