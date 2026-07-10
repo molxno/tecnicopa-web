@@ -8,7 +8,6 @@ export default defineConfig({
       include: ['src/utils/**/*.ts'],
       exclude: ['src/utils/**/*.test.ts'],
       reporter: ['text', 'html'],
-      all: true,
       thresholds: {
         lines: 100,
         functions: 100,
