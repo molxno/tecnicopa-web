@@ -5,21 +5,21 @@ import { WHATSAPP_URL } from '../utils/links';
 
 <section id="precios" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Precios</h2>
       <p class="text-tecni-dark/60 max-w-xl mx-auto">
         Precios justos y transparentes. Sin cobros ocultos — lo que cotizamos es lo que pagas.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 reveal-cascade">
       {
         plans.map((plan) => (
           <div
-            class={`flex flex-col gap-5 p-6 rounded-2xl border-2 transition-all ${
+            class={`reveal flex flex-col gap-5 p-6 rounded-2xl border-2 hover:-translate-y-1 transition-all ${
               plan.highlighted
                 ? 'border-tecni-purple bg-tecni-purple text-white shadow-lg shadow-tecni-purple/20'
-                : 'border-tecni-lilac/40 bg-white'
+                : 'border-tecni-lilac/40 bg-white hover:shadow-lg'
             }`}
           >
             <div>
@@ -65,7 +65,7 @@ import { WHATSAPP_URL } from '../utils/links';
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class={`text-center font-medium px-5 py-3 rounded-xl transition-colors ${
+              class={`text-center font-medium px-5 py-3 rounded-xl hover:-translate-y-0.5 transition ${
                 plan.highlighted
                   ? 'bg-white text-tecni-purple hover:bg-tecni-lavender'
                   : 'bg-tecni-purple text-white hover:bg-tecni-purple/90'
@@ -78,7 +78,7 @@ import { WHATSAPP_URL } from '../utils/links';
       }
     </div>
 
-    <div class="mt-12">
+    <div class="mt-12 reveal">
       <h3 class="text-center text-sm font-medium text-tecni-dark/50 uppercase tracking-wide mb-6">
         Referencia de precios por servicio
       </h3>

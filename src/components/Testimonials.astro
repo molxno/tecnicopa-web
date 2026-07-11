@@ -4,17 +4,17 @@ import { testimonials } from '../utils/content';
 
 <section id="testimonios" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Lo que dicen nuestros clientes</h2>
       <p class="text-tecni-dark/60 max-w-xl mx-auto">
         La confianza se gana con resultados. Esto es lo que nos dicen quienes ya probaron el servicio.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 reveal-cascade">
       {
         testimonials.map((t) => (
-          <figure class="flex flex-col gap-4 p-6 rounded-2xl bg-tecni-lavender">
+          <figure class="reveal flex flex-col gap-4 p-6 rounded-2xl bg-tecni-lavender">
             <blockquote>
               <p class="text-tecni-dark/70 leading-relaxed text-sm">"{t.text}"</p>
             </blockquote>

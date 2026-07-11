@@ -5,17 +5,17 @@ import { WHATSAPP_URL } from '../utils/links';
 
 <section id="servicios" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Nuestros servicios</h2>
       <p class="text-tecni-dark/60 max-w-xl mx-auto">
         Soluciones técnicas reales para los problemas más comunes. Sin tecnicismos, sin sorpresas.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-cascade">
       {
         services.map((service) => (
-          <article class="flex flex-col gap-3 p-6 rounded-2xl border border-tecni-lilac/40 hover:border-tecni-purple/40 hover:shadow-md transition-all">
+          <article class="reveal flex flex-col gap-3 p-6 rounded-2xl border border-tecni-lilac/40 hover:border-tecni-purple/40 hover:shadow-md hover:-translate-y-1 transition-all">
             <span class="text-3xl" aria-hidden="true">
               {service.icon}
             </span>
@@ -26,7 +26,7 @@ import { WHATSAPP_URL } from '../utils/links';
       }
     </div>
 
-    <div class="mt-10 p-6 rounded-2xl bg-tecni-lavender">
+    <div class="mt-10 p-6 rounded-2xl bg-tecni-lavender reveal">
       <p class="text-sm font-medium text-tecni-dark/70 mb-4">También ofrecemos:</p>
       <div class="flex flex-wrap gap-2">
         <span class="text-xs font-medium bg-white text-tecni-purple border border-tecni-lilac px-3 py-1.5 rounded-full">Ensamble de PCs a la medida</span>
@@ -38,12 +38,12 @@ import { WHATSAPP_URL } from '../utils/links';
       </div>
     </div>
 
-    <div class="mt-10 text-center">
+    <div class="mt-10 text-center reveal">
       <a
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-tecni-purple text-white font-medium px-6 py-3 rounded-xl hover:bg-tecni-purple/90 transition-colors"
+        class="inline-flex items-center gap-2 bg-tecni-purple text-white font-medium px-6 py-3 rounded-xl hover:bg-tecni-purple/90 hover:-translate-y-0.5 transition"
       >
         Agendar servicio
       </a>
