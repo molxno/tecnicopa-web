@@ -42,8 +42,12 @@ Para cualquier cambio:
 
 ## MCP configurado
 
-- **GitHub** (`@modelcontextprotocol/server-github`): PRs, branches, CI — requiere `GITHUB_TOKEN`
-- **Vercel**: auto-deploy vía GitHub (push `main` = producción, push `feature/*` = preview)
+Definidos en `.mcp.json` (raíz del proyecto). Tras clonar y abrir el proyecto en Claude Code, autentícalos con OAuth desde el comando `/mcp` (no requieren tokens manuales).
+
+- **GitHub** (servidor remoto oficial, `https://api.githubcopilot.com/mcp/`): PRs, branches, issues, CI. Login OAuth al conectar.
+- **Vercel** (servidor remoto oficial, `https://mcp.vercel.com`): proyectos, deploys y logs. Login OAuth al conectar.
+
+El auto-deploy se mantiene vía GitHub → Vercel (push `main` = producción, push `feature/*` = preview).
 
 ---
 
@@ -114,6 +118,7 @@ tecnicopa-web/
 - Mobile-first siempre — primero estilos base, luego `md:`, `lg:`
 - HTML semántico: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`, `<article>`, etc.
 - **Nunca** usar emojis en código — solo en contenido visible si aplica al diseño
+- **Código sin comentarios innecesarios ni de relleno.** Solo comentar lo estrictamente no obvio (workarounds, decisiones no evidentes, el porqué). El código debe ser autoexplicativo mediante nombres claros; no narrar en comentarios lo que el código ya dice.
 
 ### Tailwind CSS v4
 - **NO crear** `tailwind.config.js` ni `tailwind.config.mjs` — Tailwind v4 no los usa

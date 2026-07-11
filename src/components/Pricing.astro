@@ -5,21 +5,21 @@ import { WHATSAPP_URL } from '../utils/links';
 
 <section id="precios" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-bold text-tecni-dark mb-4">Precios</h2>
       <p class="text-tecni-dark/60 max-w-xl mx-auto">
         Precios justos y transparentes. Sin cobros ocultos — lo que cotizamos es lo que pagas.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 reveal-cascade">
       {
         plans.map((plan) => (
           <div
-            class={`flex flex-col gap-5 p-6 rounded-2xl border-2 transition-all ${
+            class={`reveal flex flex-col gap-5 p-6 rounded-2xl border-2 hover:-translate-y-1 transition-all ${
               plan.highlighted
                 ? 'border-tecni-purple bg-tecni-purple text-white shadow-lg shadow-tecni-purple/20'
-                : 'border-tecni-lilac/40 bg-white'
+                : 'border-tecni-lilac/40 bg-white hover:shadow-lg'
             }`}
           >
             <div>
@@ -65,7 +65,7 @@ import { WHATSAPP_URL } from '../utils/links';
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class={`text-center font-medium px-5 py-3 rounded-xl transition-colors ${
+              class={`text-center font-medium px-5 py-3 rounded-xl hover:-translate-y-0.5 transition ${
                 plan.highlighted
                   ? 'bg-white text-tecni-purple hover:bg-tecni-lavender'
                   : 'bg-tecni-purple text-white hover:bg-tecni-purple/90'
@@ -78,42 +78,42 @@ import { WHATSAPP_URL } from '../utils/links';
       }
     </div>
 
-    <div class="mt-12">
+    <div class="mt-12 reveal">
       <h3 class="text-center text-sm font-medium text-tecni-dark/50 uppercase tracking-wide mb-6">
         Referencia de precios por servicio
       </h3>
       <div class="max-w-2xl mx-auto divide-y divide-tecni-lilac/40 border border-tecni-lilac/40 rounded-2xl overflow-hidden">
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
-          <span class="text-sm text-tecni-dark/80">Diagnóstico</span>
-          <span class="text-sm font-medium text-tecni-dark">Gratis</span>
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+          <span class="text-sm text-tecni-dark/80">Diagnóstico a domicilio</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">Desde $80.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Mantenimiento preventivo</span>
-          <span class="text-sm font-medium text-tecni-dark">$30.000 – $60.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$100.000 – $130.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Mantenimiento correctivo</span>
-          <span class="text-sm font-medium text-tecni-dark">$40.000 – $80.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$100.000 – $150.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Formateo + instalación de SO</span>
-          <span class="text-sm font-medium text-tecni-dark">$40.000 – $70.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$100.000 – $130.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Eliminación de virus/malware</span>
-          <span class="text-sm font-medium text-tecni-dark">$30.000 – $50.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$100.000 – $120.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Instalación de RAM o SSD</span>
-          <span class="text-sm font-medium text-tecni-dark">$20.000 – $40.000*</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$60.000 – $90.000*</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Soporte remoto (por sesión)</span>
-          <span class="text-sm font-medium text-tecni-dark">$15.000 – $30.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$40.000 – $60.000</span>
         </div>
-        <div class="flex items-center justify-between px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 bg-white hover:bg-tecni-lavender/50 transition-colors">
           <span class="text-sm text-tecni-dark/80">Domicilio en Copacabana</span>
-          <span class="text-sm font-medium text-tecni-dark">$5.000 – $10.000</span>
+          <span class="text-sm font-medium text-tecni-dark whitespace-nowrap shrink-0">$5.000 – $10.000</span>
         </div>
       </div>
       <p class="mt-3 text-center text-xs text-tecni-dark/40">* No incluye el costo del componente.</p>

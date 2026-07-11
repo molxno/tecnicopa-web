@@ -56,6 +56,12 @@ describe('schemaOrg', () => {
     expect(schemaOrg.sameAs).toContain('https://instagram.com/tecnicopa');
   });
 
+  it('lists Facebook in sameAs', () => {
+    expect(schemaOrg.sameAs).toContain(
+      'https://www.facebook.com/people/TecniCopa/61574508140428/',
+    );
+  });
+
   it('has a Person founder', () => {
     expect(schemaOrg.founder['@type']).toBe('Person');
     expect(schemaOrg.founder.name).toBe('Santiago Molano');

@@ -8,8 +8,8 @@ const navLinks = NAV_LINKS;
 
 <header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-tecni-lilac/30 z-50">
   <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/logo.png" alt="TecniCopa" class="h-10 w-10 rounded-lg" />
+    <a href="/" data-scroll-top class="flex items-center gap-2">
+      <img src="/logo.png" alt="TecniCopa" width="40" height="40" class="h-10 w-10 rounded-lg" />
       <span class="text-xl font-bold text-tecni-purple">TecniCopa</span>
     </a>
 
@@ -29,7 +29,7 @@ const navLinks = NAV_LINKS;
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm font-medium bg-tecni-purple text-white px-4 py-2 rounded-lg hover:bg-tecni-purple/90 transition-colors"
+          class="text-sm font-medium bg-tecni-purple text-white px-4 py-2 rounded-lg hover:bg-tecni-purple/90 hover:-translate-y-0.5 transition"
         >
           Escríbenos
         </a>

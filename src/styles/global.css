@@ -8,3 +8,45 @@
   --color-tecni-lavender: #EEEDFE;
   --color-tecni-lilac: #CECBF6;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Compensa el header fijo (4rem) para que el título no quede oculto tras él */
+section[id],
+:target {
+  scroll-margin-top: 5rem;
+}
+
+/* Estado oculto gated en .reveal-ready: sin JS o con reduce-motion se ve siempre */
+@media (prefers-reduced-motion: no-preference) {
+  html.reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 0.55s ease-out,
+      transform 0.55s ease-out;
+  }
+
+  html.reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  html.reveal-ready .reveal-cascade > .reveal:nth-child(2) {
+    transition-delay: 0.07s;
+  }
+  html.reveal-ready .reveal-cascade > .reveal:nth-child(3) {
+    transition-delay: 0.14s;
+  }
+  html.reveal-ready .reveal-cascade > .reveal:nth-child(4) {
+    transition-delay: 0.21s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
