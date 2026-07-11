@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { WHATSAPP_URL, INSTAGRAM_URL, EMAIL, PHONE } from '../links';
+import { WHATSAPP_URL, INSTAGRAM_URL, FACEBOOK_URL, EMAIL, PHONE } from '../links';
 
 describe('WHATSAPP_URL', () => {
   it('points to wa.me', () => {
@@ -18,6 +18,18 @@ describe('WHATSAPP_URL', () => {
 describe('INSTAGRAM_URL', () => {
   it('points to the tecnicopa Instagram profile', () => {
     expect(INSTAGRAM_URL).toBe('https://instagram.com/tecnicopa');
+  });
+});
+
+describe('FACEBOOK_URL', () => {
+  it('points to the TecniCopa Facebook profile', () => {
+    expect(FACEBOOK_URL).toBe(
+      'https://www.facebook.com/people/TecniCopa/61574508140428/',
+    );
+  });
+
+  it('is an https URL', () => {
+    expect(FACEBOOK_URL).toMatch(/^https:\/\//);
   });
 });
 

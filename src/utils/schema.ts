@@ -20,7 +20,10 @@ export const schemaOrg = {
   priceRange: '$',
   serviceType: 'Computer Repair',
   image: 'https://tecnicopa.com/logo.png',
-  sameAs: ['https://instagram.com/tecnicopa'],
+  sameAs: [
+    'https://instagram.com/tecnicopa',
+    'https://www.facebook.com/people/TecniCopa/61574508140428/',
+  ],
   founder: {
     '@type': 'Person',
     name: 'Santiago Molano',
