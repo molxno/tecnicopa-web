@@ -1,5 +1,13 @@
 ---
 import '../styles/global.css';
+// Inter self-hosteada (subset latin, pesos 400/500/700, font-display: swap)
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-700.css';
+// URLs reales (hasheadas por Vite) de las variantes above-the-fold para preload.
+// Vite deduplica: estas apuntan al mismo .woff2 que referencia el @font-face.
+import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import interLatin700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
 import SEO from '../components/SEO.astro';
 import { schemaOrg } from '../utils/schema';
 
@@ -35,13 +43,9 @@ const {
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Inter self-hosteada: preload solo de las variantes above-the-fold (400 texto, 700 títulos) -->
+    <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interLatin700} as="font" type="font/woff2" crossorigin />
 
     <!-- Schema.org LocalBusiness JSON-LD -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
