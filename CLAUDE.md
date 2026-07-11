@@ -118,6 +118,7 @@ tecnicopa-web/
 - Mobile-first siempre — primero estilos base, luego `md:`, `lg:`
 - HTML semántico: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`, `<article>`, etc.
 - **Nunca** usar emojis en código — solo en contenido visible si aplica al diseño
+- **Código sin comentarios innecesarios ni de relleno.** Solo comentar lo estrictamente no obvio (workarounds, decisiones no evidentes, el porqué). El código debe ser autoexplicativo mediante nombres claros; no narrar en comentarios lo que el código ya dice.
 
 ### Tailwind CSS v4
 - **NO crear** `tailwind.config.js` ni `tailwind.config.mjs` — Tailwind v4 no los usa
